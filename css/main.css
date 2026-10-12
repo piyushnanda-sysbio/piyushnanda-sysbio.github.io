@@ -1,32 +1,32 @@
 /* ---- tokens ---- */
 :root {
-  --text:   #2e2e2e;
-  --muted:  #8a8a8a;
-  --faint:  #b9b9b9;
-  --accent: #0f8b8d;
-  --accent-bg: #eaf5f5;
+  --text:   #1f1f1f;
+  --muted:  #7c7c7c;
+  --faint:  #b3b3b3;
+  --accent: #000000;
+  --accent-bg: #e8e8e8;
   --bg:     #ffffff;
-  --rule:   #e4e4e4;
-  --chip:   #f3f4f4;
+  --rule:   #e0e0e0;
+  --chip:   #f2f2f2;
   --serif: 'Newsreader', 'Tiempos', 'Times New Roman', Times, serif;
   --sans:  'Inter', 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --text:   #dcdcda;
-    --muted:  #8e8e8c;
-    --faint:  #6a6a68;
-    --accent: #4fc3c4;
-    --accent-bg: #16302f;
-    --bg:     #16171a;
-    --rule:   #2d2f33;
-    --chip:   #232529;
+    --text:   #dedede;
+    --muted:  #8d8d8d;
+    --faint:  #686868;
+    --accent: #ffffff;
+    --accent-bg: #2e2e2e;
+    --bg:     #171717;
+    --rule:   #303030;
+    --chip:   #232323;
   }
 }
 :root[data-theme="dark"] {
-  --text:#dcdcda; --muted:#8e8e8c; --faint:#6a6a68; --accent:#4fc3c4;
-  --accent-bg:#16302f; --bg:#16171a; --rule:#2d2f33; --chip:#232529;
+  --text:#dedede; --muted:#8d8d8d; --faint:#686868; --accent:#ffffff;
+  --accent-bg:#2e2e2e; --bg:#171717; --rule:#303030; --chip:#232323;
 }
 
 /* ---- base ---- */
@@ -124,13 +124,14 @@ nav a:hover { color: var(--accent); }
 }
 
 .portrait {
-  width: 240px;
+  width: 300px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center 16%;
   float: left;
-  margin: 6px 32px 16px 0;
+  margin: 6px 30px 18px 0;
   border-radius: 2px;
+  filter: grayscale(100%);
 }
 
 .clear { clear: both; }
@@ -171,7 +172,7 @@ ol.pubs p { margin: 0 0 0.4em; }
 }
 
 .figure-row { display: flex; flex-direction: column; gap: 1em; margin: 1.4em 0; }
-.figure-row img { width: 100%; max-width: 460px; height: auto; border-radius: 2px; }
+.figure-row img { width: 100%; max-width: 460px; height: auto; border-radius: 2px; filter: grayscale(100%); }
 .legend { font-size: 0.86em; color: var(--muted); max-width: 440px; }
 
 /* ---- contact ---- */
@@ -200,8 +201,8 @@ dl.contact dd a:hover { color: var(--accent); }
   .portrait {
     float: none;
     display: block;
-    width: 190px;
-    margin: 0 0 24px;
+    width: 230px;
+    margin: 0 0 26px;
   }
   nav li { margin-right: 18px; }
 }
