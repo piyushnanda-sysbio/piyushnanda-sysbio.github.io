@@ -1,0 +1,207 @@
+/* ---- tokens ---- */
+:root {
+  --text:   #2e2e2e;
+  --muted:  #8a8a8a;
+  --faint:  #b9b9b9;
+  --accent: #0f8b8d;
+  --accent-bg: #eaf5f5;
+  --bg:     #ffffff;
+  --rule:   #e4e4e4;
+  --chip:   #f3f4f4;
+  --serif: 'Newsreader', 'Tiempos', 'Times New Roman', Times, serif;
+  --sans:  'Inter', 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --text:   #dcdcda;
+    --muted:  #8e8e8c;
+    --faint:  #6a6a68;
+    --accent: #4fc3c4;
+    --accent-bg: #16302f;
+    --bg:     #16171a;
+    --rule:   #2d2f33;
+    --chip:   #232529;
+  }
+}
+:root[data-theme="dark"] {
+  --text:#dcdcda; --muted:#8e8e8c; --faint:#6a6a68; --accent:#4fc3c4;
+  --accent-bg:#16302f; --bg:#16171a; --rule:#2d2f33; --chip:#232529;
+}
+
+/* ---- base ---- */
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  max-width: 800px;
+  margin: 64px auto 96px;
+  padding: 0 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+}
+
+h2 {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 2.2em 0 0.5em;
+}
+h2:first-of-type { margin-top: 0; }
+
+h3 {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 2em 0 0.8em;
+}
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .12s ease, border-color .12s ease;
+}
+a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+em, i { font-style: italic; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--rule);
+  margin: 2.5em 0;
+}
+
+sup { vertical-align: top; position: relative; top: -0.25em; font-size: 0.72em; }
+
+/* ---- nav ---- */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 42px;
+}
+nav li { display: inline-block; margin: 0 24px 10px 0; }
+nav a {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+nav a.active { color: var(--text); border-bottom-color: var(--accent); }
+nav a:hover { color: var(--accent); }
+
+/* ---- about ---- */
+.drop-cap::first-letter {
+  font-family: var(--serif);
+  font-size: 3.1em;
+  font-weight: 500;
+  float: left;
+  line-height: 0.92;
+  margin: 0.04em 0.09em -0.06em 0;
+  color: var(--text);
+}
+
+.portrait {
+  width: 240px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 16%;
+  float: left;
+  margin: 6px 32px 16px 0;
+  border-radius: 2px;
+}
+
+.clear { clear: both; }
+
+/* ---- chips / small links ---- */
+.chip {
+  display: inline-block;
+  font-size: 0.78em;
+  letter-spacing: 0.03em;
+  background: var(--chip);
+  color: var(--muted);
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-right: 0.45em;
+  white-space: nowrap;
+  border-bottom: 0;
+}
+.chip:hover { background: var(--accent-bg); color: var(--accent); border-bottom: 0; }
+
+/* ---- publications ---- */
+ol.pubs { padding-left: 1.5em; margin: 0 0 1.5em; }
+ol.pubs li { margin-bottom: 1.25em; padding-left: 0.2em; }
+ol.pubs li::marker { color: var(--faint); font-size: 0.9em; }
+ol.pubs p { margin: 0 0 0.4em; }
+.me { font-weight: 600; color: var(--text); }
+.venue { font-style: italic; }
+
+.footnote { font-size: 0.86em; color: var(--muted); }
+
+/* ---- research / teaching entries ---- */
+.entry { margin-bottom: 2.4em; }
+.entry .meta {
+  font-size: 0.82em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 0.5em;
+}
+
+.figure-row { display: flex; flex-direction: column; gap: 1em; margin: 1.4em 0; }
+.figure-row img { width: 100%; max-width: 460px; height: auto; border-radius: 2px; }
+.legend { font-size: 0.86em; color: var(--muted); max-width: 440px; }
+
+/* ---- contact ---- */
+dl.contact { margin: 0; }
+dl.contact dt {
+  font-size: 0.82em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-top: 1.3em;
+}
+dl.contact dd { margin: 0.15em 0 0; }
+dl.contact dd a { color: var(--text); }
+dl.contact dd a:hover { color: var(--accent); }
+
+/* ---- responsive ---- */
+@media (min-width: 900px) {
+  .figure-row { flex-direction: row; align-items: flex-start; }
+  .figure-row .legend { margin-top: 0.2em; }
+}
+
+@media (max-width: 620px) {
+  body { margin: 40px auto 64px; font-size: 17px; }
+  h1 { font-size: 38px; }
+  h2 { font-size: 21px; }
+  .portrait {
+    float: none;
+    display: block;
+    width: 190px;
+    margin: 0 0 24px;
+  }
+  nav li { margin-right: 18px; }
+}
