@@ -1,6 +1,6 @@
 /* ---- tokens ---- */
 :root {
-  --text:   #1f1f1f;
+  --text:   #141414;
   --muted:  #7c7c7c;
   --faint:  #b3b3b3;
   --accent: #000000;
@@ -8,13 +8,18 @@
   --bg:     #ffffff;
   --rule:   #e0e0e0;
   --chip:   #f2f2f2;
-  --serif: 'Newsreader', 'Tiempos', 'Times New Roman', Times, serif;
-  --sans:  'Inter', 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Helvetica Neue Light on Apple devices; Inter 300 is the fallback elsewhere,
+     since Windows/Android ship no light-weight Helvetica or Arial.
+     To restore serif headings: set --display to var(--serif) and re-add
+     Newsreader to the Google Fonts <link> in each page. */
+  --serif:   'Newsreader', 'Tiempos', 'Times New Roman', Times, serif;
+  --sans:    'Helvetica Neue', 'Inter', Helvetica, Arial, sans-serif;
+  --display: var(--sans);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --text:   #dedede;
+    --text:   #e4e4e4;
     --muted:  #8d8d8d;
     --faint:  #686868;
     --accent: #ffffff;
@@ -25,7 +30,7 @@
   }
 }
 :root[data-theme="dark"] {
-  --text:#dedede; --muted:#8d8d8d; --faint:#686868; --accent:#ffffff;
+  --text:#e4e4e4; --muted:#8d8d8d; --faint:#686868; --accent:#ffffff;
   --accent-bg:#2e2e2e; --bg:#171717; --rule:#303030; --chip:#232323;
 }
 
@@ -41,26 +46,30 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.55;
+  font-size: 18.5px;
+  font-weight: 300;
+  line-height: 1.62;
+  letter-spacing: 0.004em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
-  font-family: var(--serif);
-  font-size: 52px;
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  margin: 0 0 20px;
+  font-family: var(--display);
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  margin: 0 0 22px;
 }
 
 h2 {
-  font-family: var(--serif);
-  font-size: 23px;
-  font-weight: 600;
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 400;
   line-height: 1.25;
-  margin: 2.2em 0 0.5em;
+  letter-spacing: -0.012em;
+  margin: 2.3em 0 0.55em;
 }
 h2:first-of-type { margin-top: 0; }
 
@@ -114,9 +123,9 @@ nav a:hover { color: var(--accent); }
 
 /* ---- about ---- */
 .drop-cap::first-letter {
-  font-family: var(--serif);
-  font-size: 3.1em;
-  font-weight: 500;
+  font-family: var(--display);
+  font-size: 3.2em;
+  font-weight: 300;
   float: left;
   line-height: 0.92;
   margin: 0.04em 0.09em -0.06em 0;
@@ -139,6 +148,7 @@ nav a:hover { color: var(--accent); }
 /* ---- chips / small links ---- */
 .chip {
   display: inline-block;
+  font-weight: 400;
   font-size: 0.78em;
   letter-spacing: 0.03em;
   background: var(--chip);
@@ -153,17 +163,19 @@ nav a:hover { color: var(--accent); }
 
 /* ---- publications ---- */
 ol.pubs { padding-left: 1.5em; margin: 0 0 1.5em; }
+ol.pubs li { font-weight: 300; }
 ol.pubs li { margin-bottom: 1.25em; padding-left: 0.2em; }
 ol.pubs li::marker { color: var(--faint); font-size: 0.9em; }
 ol.pubs p { margin: 0 0 0.4em; }
 .me { font-weight: 600; color: var(--text); }
 .venue { font-style: italic; }
 
-.footnote { font-size: 0.86em; color: var(--muted); }
+.footnote { font-size: 0.86em; font-weight: 400; color: var(--muted); }
 
 /* ---- research / teaching entries ---- */
 .entry { margin-bottom: 2.4em; }
 .entry .meta {
+  font-weight: 400;
   font-size: 0.82em;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -173,11 +185,12 @@ ol.pubs p { margin: 0 0 0.4em; }
 
 .figure-row { display: flex; flex-direction: column; gap: 1em; margin: 1.4em 0; }
 .figure-row img { width: 100%; max-width: 460px; height: auto; border-radius: 2px; filter: grayscale(100%); }
-.legend { font-size: 0.86em; color: var(--muted); max-width: 440px; }
+.legend { font-size: 0.86em; font-weight: 400; color: var(--muted); max-width: 440px; }
 
 /* ---- contact ---- */
 dl.contact { margin: 0; }
 dl.contact dt {
+  font-weight: 400;
   font-size: 0.82em;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -195,8 +208,8 @@ dl.contact dd a:hover { color: var(--accent); }
 }
 
 @media (max-width: 620px) {
-  body { margin: 40px auto 64px; font-size: 17px; }
-  h1 { font-size: 38px; }
+  body { margin: 40px auto 64px; font-size: 17.5px; line-height: 1.6; }
+  h1 { font-size: 40px; letter-spacing: -0.022em; }
   h2 { font-size: 21px; }
   .portrait {
     float: none;
