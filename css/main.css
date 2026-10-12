@@ -185,6 +185,8 @@ ol.pubs p { margin: 0 0 0.4em; }
 
 .figure-row { display: flex; flex-direction: column; gap: 1em; margin: 1.4em 0; }
 .figure-row img { width: 100%; max-width: 460px; height: auto; border-radius: 2px; filter: grayscale(100%); }
+/* Opt out when colour carries meaning (e.g. colour-coded subunits in a schematic) */
+.figure-row img.keep-color { filter: none; }
 .legend { font-size: 0.86em; font-weight: 400; color: var(--muted); max-width: 440px; }
 
 /* ---- contact ---- */
