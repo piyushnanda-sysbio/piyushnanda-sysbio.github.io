@@ -27,16 +27,28 @@ assets/cv.pdf         CV, linked from the nav
 
 ## Adding figures to the Research page
 
-The CSS already has a figure layout. Drop an image in `img/` and use:
+**Always resize first.** Slide-export PNGs are often 10,000+ px wide and several MB;
+they display here at 460px. `sips` is built into macOS:
+
+```sh
+sips -s format jpeg -s formatOptions 80 -Z 1200 /path/to/source.png \
+  --out img/your-figure.jpg
+```
+
+`-Z 1200` caps the long edge at 1200px — ample for a 460px slot on a retina screen,
+and typically takes a 3MB PNG down to ~200KB.
+
+Then paste this inside the relevant `<div class="entry">` in `research/index.html`:
 
 ```html
 <div class="figure-row">
-  <img src="/img/your-figure.png" alt="describe the figure">
+  <img src="/img/your-figure.jpg" alt="describe the figure">
   <p class="legend">Caption goes here.</p>
 </div>
 ```
 
-It stacks on mobile and sits side-by-side above 900px.
+It sits side-by-side above 900px, stacks on mobile, and is rendered grayscale to match
+the rest of the site (the filter is on `.figure-row img` in `css/main.css`).
 
 ## Preview locally
 
