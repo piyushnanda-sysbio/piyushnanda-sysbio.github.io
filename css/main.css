@@ -221,3 +221,8 @@ dl.contact dd a:hover { color: var(--accent); }
   }
   nav li { margin-right: 18px; }
 }
+
+/* Multi-panel figures: full column width, legend underneath */
+.figure-row.wide { flex-direction: column; }
+.figure-row.wide img { max-width: 100%; }
+.figure-row.wide .legend { max-width: none; }

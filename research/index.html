@@ -44,12 +44,12 @@
     from seconds to hours, combined with yeast genetics.
   </p>
 
-  <div class="figure-row">
-    <img src="/img/perceval-atp.jpg" alt="Single-cell ATP:ADP ratio imaged with PercevalHR across a glucose-to-galactose shift">
-    <p class="legend">The kind of measurement this is built on: absolute ATP:ADP ratio in
-    single yeast cells, read out with a calibrated PercevalHR biosensor across a shift from
-    glucose to galactose. Some cells restore ATP within hours; neighbors in the same field
-    do not.</p>
+  <div class="figure-row wide">
+    <img class="keep-color" src="/img/perceval-shift.jpg" alt="Microfluidic device switching yeast from glucose to galactose/ethanol, and PercevalHR ATP:ADP images of Arrestor and Recoverer cell groups over five hours">
+    <p class="legend">The kind of measurement this is built on. Left: cells held under a
+    microfluidic flow that switches glucose for galactose/ethanol. Right: ATP:ADP in the same
+    field, read out with the PercevalHR sensor. Every cell loses ATP within seconds of the
+    shift; over hours, Recoverers (R) restore it while Arrestors (A) next to them do not.</p>
   </div>
   <p>
     Three directions. First, the allosteric controls on phosphofructokinase &mdash; conserved
@@ -73,11 +73,12 @@
     driven by antagonism between cytoplasmic and mitochondrial translation.
   </p>
 
-  <div class="figure-row">
-    <img class="keep-color" src="/img/mito-sfgfp-cells.jpg" alt="Yeast cells in glucose imaged for PreSu9-mNeptune and mitochondrial sfGFP; some clusters are bright for sfGFP and others are dark">
-    <p class="legend">Clonal cells in glucose. Every cell has mitochondria
-    (PreSu9-mNeptune, left), but only some express the mitochondrial sfGFP reporter
-    (right): Recoverers are outlined in cyan, Arrestors in magenta.</p>
+  <div class="figure-row wide">
+    <img class="keep-color" src="/img/mito-sfgfp-states.jpg" alt="Yeast cells in glucose imaged for matrix-targeted mNeptune and mitochondrial sfGFP, beside a bimodal histogram of per-cell sfGFP separating Arrestors from Recoverers">
+    <p class="legend">The two states are already visible before the shift. Every cell has
+    mitochondria (matrix-targeted mNeptune, left), but only some carry high levels of a
+    mitochondrial sfGFP reporter (centre); Recoverers are outlined in cyan, Arrestors in
+    magenta. Right: per-cell sfGFP is bimodal and separates the two groups.</p>
   </div>
   <p>
     Because the two states differ in how they fare when conditions change, the switch
@@ -87,13 +88,6 @@
     tracking single cells and their metabolic state over long timescales.
   </p>
 
-  <div class="figure-row">
-    <img class="keep-color" src="/img/mito-feedback.jpg" alt="Schematic of the mitochondrial positive feedback loop between membrane potential, mitoribosomes and the electron transport chain">
-    <p class="legend">The loop that makes the switch bistable: membrane potential
-    (&Delta;&psi;) drives import of mitoribosome precursors, mitoribosomes translate the
-    mtDNA-encoded Complex IV subunits, and the electron transport chain regenerates
-    &Delta;&psi;.</p>
-  </div>
   <p>
     <a class="chip" href="https://doi.org/10.64898/2026.03.30.715437" target="_blank" rel="noopener">preprint</a>
   </p>
@@ -110,6 +104,12 @@
     compositions, then tested it against high-throughput microscopy measurements of
     absolute cluster size.
   </p>
+  <div class="figure-row wide">
+    <img class="keep-color" src="/img/clusters-bud4.jpg" alt="A large yeast cluster without beta-estradiol beside a small cluster with 10 nM beta-estradiol, in ace2-deleted cells with inducible BUD4">
+    <p class="legend">Cell-level rules set cluster size. <em>ace2&Delta;</em> cells stay
+    attached after division; inducing <em>BUD4</em> with &beta;-estradiol changes where they
+    bud. Uninduced (left) versus 10&nbsp;nM &beta;-estradiol (right). Scale bars, 5&nbsp;&micro;m.</p>
+  </div>
   <p>
     In related work with Jordi Barrere, we showed that alternating selection for dispersal
     and for multicellularity favors the evolution of <em>regulated</em> life cycles, rather
