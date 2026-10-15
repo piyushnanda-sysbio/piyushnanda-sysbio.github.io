@@ -226,8 +226,3 @@ dl.contact dd a:hover { color: var(--accent); }
 .figure-row.wide { flex-direction: column; }
 .figure-row.wide img { max-width: 100%; }
 .figure-row.wide .legend { max-width: none; }
-/* Wider than the text column on large screens, for dense multi-panel figures */
-@media (min-width: 900px) {
-  .figure-row.bleed { width: min(1120px, 100vw - 64px); margin-left: 50%; transform: translateX(-50%); }
-  .figure-row.bleed .legend { width: 100%; max-width: 768px; margin: 0 auto; }
-}
